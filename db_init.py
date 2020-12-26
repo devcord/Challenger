@@ -1,6 +1,7 @@
 import sqlite3
 from sqlite3 import Error
 
+# Just some create functions to test
 def create_connection(db_file):
     # Create a new connection to the sqlite database
     conn = None
@@ -36,14 +37,6 @@ def create_challenge(conn, user):
     cur = conn.cursor()
     cur.execute(sql, user)
     conn.commit()
-
-def get_challenges(conn):
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM challenges")
-
-    rows = cur.fetchall()
-        
-    return list(map(list, rows))
 
 
 db_conn = create_connection(r"./db/testdb.db")
