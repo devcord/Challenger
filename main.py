@@ -1,10 +1,10 @@
+from cmd import hello, __all__
 import discord
 import json
-from cmd import hello, __all__
+import db_init
 
 # Load secrets for the bot, should include the token and prefix
 bot_info = json.load(open("bot_info.json", "r"))
-
 client = discord.Client()
 
 @client.event
