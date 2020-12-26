@@ -1,4 +1,5 @@
-from cmd import hello, __all__
+from cmd import *
+from cmd import __all__
 import discord
 import json
 import db_init

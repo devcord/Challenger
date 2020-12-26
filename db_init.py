@@ -37,4 +37,13 @@ def create_challenge(conn, user):
     cur.execute(sql, user)
     conn.commit()
 
+def get_challenges(conn):
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM challenges")
+
+    rows = cur.fetchall()
+        
+    return list(map(list, rows))
+
+
 db_conn = create_connection(r"./db/testdb.db")
